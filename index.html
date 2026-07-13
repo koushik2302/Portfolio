@@ -686,7 +686,24 @@ body{
 }
 .finp:focus,.fsel:focus{border-color:var(--accent)}
 .finp::placeholder{color:var(--ink-3)}
-.fsel{appearance:none;cursor:pointer;background:var(--bg)}
+.fsel{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  cursor:pointer;
+  padding-right:2.2rem;
+  background-color:var(--bg);
+  /* custom chevron — required, since appearance:none removes the native one */
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                   linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 18px) calc(50% - 1px),
+                      calc(100% - 13px) calc(50% - 1px);
+  background-size:5px 5px,5px 5px;
+  background-repeat:no-repeat;
+  transition:background-position var(--dur),border-color var(--dur),color var(--dur);
+}
+.fsel:focus{
+  background-image:linear-gradient(135deg,transparent 50%,var(--accent) 50%),
+                   linear-gradient(45deg,var(--accent) 50%,transparent 50%);
+}
 .fsel option{background:var(--bg);color:var(--ink)}
 .fsbmt{
   font-family:var(--fb);font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
@@ -896,13 +913,13 @@ footer{
   <div class="blob blob-2" id="b2"></div>
 
   <div class="hero-l">
-    <div class="hero-eyebrow" data-anim="up" data-delay="100">MBA Candidate · Operations Major · Bengaluru</div>
+    <div class="hero-eyebrow" data-anim="up" data-delay="100">MBA Candidate · Operations &amp; Supply Chain · Bengaluru</div>
     <h1 class="hero-name">
       <span><span class="w" data-anim="up" data-delay="220">KOUSHIK</span></span>
       <span><span class="w it" data-anim="up" data-delay="350">C.</span></span>
     </h1>
     <p class="hero-desc" data-anim="up" data-delay="460">
-      MBA candidate at PES University — majoring in Operations, minoring in Business Analytics — targeting operations and analyst roles. I care about why systems break and what it costs when they do — and I back that up with data I can pull and model myself, not wait for. Prior industry experience in enterprise infrastructure support.
+      MBA candidate at PES University — majoring in <strong>Operations</strong>, minoring in Business Analytics. I work on the parts of a business where throughput, inventory, and service levels are decided: queues, bottlenecks, capacity, and the cost of a promise you can't keep. And I back it with data I model myself rather than wait for.
     </p>
     <div class="hero-btns" data-anim="up" data-delay="560">
       <a href="#contact" class="btn-p"><span>Get in Touch ↗</span></a>
@@ -932,29 +949,29 @@ footer{
 <div class="strip">
   <div class="strip-track" aria-hidden="true">
     <span class="strip-item">Operations Management <span class="s-dot"></span></span>
-    <span class="strip-item">Process Improvement <span class="s-dot"></span></span>
-    <span class="strip-item">Root-Cause Analysis <span class="s-dot"></span></span>
-    <span class="strip-item">Lean Six Sigma <span class="s-dot"></span></span>
-    <span class="strip-item">SLA &amp; Incident Management <span class="s-dot"></span></span>
-    <span class="strip-item">Python · SQL <span class="s-dot"></span></span>
-    <span class="strip-item">Business Analytics <span class="s-dot"></span></span>
     <span class="strip-item">Supply Chain <span class="s-dot"></span></span>
-    <span class="strip-item">Excel · Dashboards <span class="s-dot"></span></span>
+    <span class="strip-item">Capacity Planning <span class="s-dot"></span></span>
+    <span class="strip-item">Inventory &amp; Demand Planning <span class="s-dot"></span></span>
+    <span class="strip-item">Process Improvement <span class="s-dot"></span></span>
+    <span class="strip-item">Lean Six Sigma <span class="s-dot"></span></span>
+    <span class="strip-item">Root-Cause Analysis <span class="s-dot"></span></span>
+    <span class="strip-item">SLA &amp; Service Design <span class="s-dot"></span></span>
     <span class="strip-item">Discrete-Event Simulation <span class="s-dot"></span></span>
-    <span class="strip-item">Enterprise Risk Management <span class="s-dot"></span></span>
-    <span class="strip-item">Stakeholder Management <span class="s-dot"></span></span>
+    <span class="strip-item">Forecasting <span class="s-dot"></span></span>
+    <span class="strip-item">Python · SQL · Excel <span class="s-dot"></span></span>
+    <span class="strip-item">Business Analytics <span class="s-dot"></span></span>
     <span class="strip-item">Operations Management <span class="s-dot"></span></span>
-    <span class="strip-item">Process Improvement <span class="s-dot"></span></span>
-    <span class="strip-item">Root-Cause Analysis <span class="s-dot"></span></span>
-    <span class="strip-item">Lean Six Sigma <span class="s-dot"></span></span>
-    <span class="strip-item">SLA &amp; Incident Management <span class="s-dot"></span></span>
-    <span class="strip-item">Python · SQL <span class="s-dot"></span></span>
-    <span class="strip-item">Business Analytics <span class="s-dot"></span></span>
     <span class="strip-item">Supply Chain <span class="s-dot"></span></span>
-    <span class="strip-item">Excel · Dashboards <span class="s-dot"></span></span>
+    <span class="strip-item">Capacity Planning <span class="s-dot"></span></span>
+    <span class="strip-item">Inventory &amp; Demand Planning <span class="s-dot"></span></span>
+    <span class="strip-item">Process Improvement <span class="s-dot"></span></span>
+    <span class="strip-item">Lean Six Sigma <span class="s-dot"></span></span>
+    <span class="strip-item">Root-Cause Analysis <span class="s-dot"></span></span>
+    <span class="strip-item">SLA &amp; Service Design <span class="s-dot"></span></span>
     <span class="strip-item">Discrete-Event Simulation <span class="s-dot"></span></span>
-    <span class="strip-item">Enterprise Risk Management <span class="s-dot"></span></span>
-    <span class="strip-item">Stakeholder Management <span class="s-dot"></span></span>
+    <span class="strip-item">Forecasting <span class="s-dot"></span></span>
+    <span class="strip-item">Python · SQL · Excel <span class="s-dot"></span></span>
+    <span class="strip-item">Business Analytics <span class="s-dot"></span></span>
   </div>
 </div>
 
@@ -966,38 +983,38 @@ footer{
     <div class="sk-card" data-anim="up" data-delay="60">
       <div class="sk-n">01</div><div class="sk-s">Operations Major</div>
       <h3 class="sk-nm">Operations Management</h3>
-      <p class="sk-d">I work the problem where it actually happens — queues, bottlenecks, handoffs, and failure points. Trained on live incident queues at HPE, now formalising it through an Operations MBA specialisation.</p>
-      <div class="sk-tags"><span class="sk-tag">Process Mapping</span><span class="sk-tag">Bottleneck Analysis</span><span class="sk-tag">SLA Management</span><span class="sk-tag">Capacity Planning</span></div>
+      <p class="sk-d">I work the problem where it actually happens — queues, bottlenecks, handoffs, and the point where throughput stops scaling. Capacity and staffing decisions, made against a model rather than a hunch.</p>
+      <div class="sk-tags"><span class="sk-tag">Capacity Planning</span><span class="sk-tag">Bottleneck Analysis</span><span class="sk-tag">Process Mapping</span><span class="sk-tag">SLA Management</span><span class="sk-tag">Queueing Theory</span></div>
     </div>
     <div class="sk-card" data-anim="up" data-delay="100">
-      <div class="sk-n">02</div><div class="sk-s">Structured Problem-Solving</div>
-      <h3 class="sk-nm">Process Improvement</h3>
-      <p class="sk-d">DMAIC, root-cause analysis, and control charts — but the part that matters is doing it against real recurring failures, not textbook cases. I look for the defect that keeps coming back.</p>
-      <div class="sk-tags"><span class="sk-tag">Lean Six Sigma</span><span class="sk-tag">DMAIC</span><span class="sk-tag">RCA / 5 Whys</span><span class="sk-tag">SOP Design</span></div>
+      <div class="sk-n">02</div><div class="sk-s">Where Operations Meets Cost</div>
+      <h3 class="sk-nm">Supply Chain &amp; Logistics</h3>
+      <p class="sk-d">Inventory is a bet on demand you haven't seen yet. I'm interested in the trade-offs that bet forces: service level against holding cost, safety stock against variability, and how disruption propagates when a single node stalls.</p>
+      <div class="sk-tags"><span class="sk-tag">Inventory Management</span><span class="sk-tag">Demand Planning</span><span class="sk-tag">Safety Stock &amp; EOQ</span><span class="sk-tag">Lead-Time Variability</span><span class="sk-tag">Bullwhip Effect</span><span class="sk-tag">S&amp;OP</span></div>
     </div>
     <div class="sk-card" data-anim="up" data-delay="140">
-      <div class="sk-n">03</div><div class="sk-s">Numbers-Backed</div>
-      <h3 class="sk-nm">Data &amp; Analytics</h3>
-      <p class="sk-d">I get my own data — pull it, clean it, model it, and build the dashboard that makes it usable by someone who isn't me. That last step is the one most analyses skip.</p>
-      <div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">Pandas/NumPy</span><span class="sk-tag">Excel (Adv.)</span><span class="sk-tag">Dashboards</span></div>
+      <div class="sk-n">03</div><div class="sk-s">Structured Problem-Solving</div>
+      <h3 class="sk-nm">Process Improvement</h3>
+      <p class="sk-d">DMAIC, root-cause analysis, and control charts — but the part that matters is running them against real recurring failures, not textbook cases. I look for the defect that keeps coming back.</p>
+      <div class="sk-tags"><span class="sk-tag">Lean Six Sigma</span><span class="sk-tag">DMAIC</span><span class="sk-tag">RCA / 5 Whys</span><span class="sk-tag">Cycle-Time Reduction</span><span class="sk-tag">SOP Design</span></div>
     </div>
     <div class="sk-card" data-anim="up" data-delay="180">
       <div class="sk-n">04</div><div class="sk-s">Analytics Minor</div>
       <h3 class="sk-nm">Modelling &amp; Forecasting</h3>
-      <p class="sk-d">The methods behind the numbers, not just the tools. Regression, forecasting, and discrete-event simulation — plus the discipline of stating what a model can't tell you, and validating it against a known answer before trusting it.</p>
-      <div class="sk-tags"><span class="sk-tag">Discrete-Event Simulation</span><span class="sk-tag">Queueing Theory</span><span class="sk-tag">Forecasting</span><span class="sk-tag">Hypothesis Testing</span><span class="sk-tag">SimPy</span></div>
+      <p class="sk-d">The methods behind the numbers, not just the tools. Discrete-event simulation, forecasting, and regression — plus the discipline of stating what a model can't tell you, and validating it against a known answer before trusting it.</p>
+      <div class="sk-tags"><span class="sk-tag">Discrete-Event Simulation</span><span class="sk-tag">Forecasting</span><span class="sk-tag">Regression</span><span class="sk-tag">Hypothesis Testing</span><span class="sk-tag">Sensitivity Analysis</span></div>
     </div>
     <div class="sk-card" data-anim="up" data-delay="220">
-      <div class="sk-n">05</div><div class="sk-s">Downstream Thinking</div>
-      <h3 class="sk-nm">Supply Chain &amp; Risk</h3>
-      <p class="sk-d">Inventory logic, demand variability, and where operational risk actually sits. Grounded in ERM fundamentals — ISO/COSO standards, risk registers, and reporting.</p>
-      <div class="sk-tags"><span class="sk-tag">Inventory Management</span><span class="sk-tag">Demand Planning</span><span class="sk-tag">ERM</span><span class="sk-tag">Risk Reporting</span></div>
+      <div class="sk-n">05</div><div class="sk-s">Self-Sufficient</div>
+      <h3 class="sk-nm">Data &amp; Analytics</h3>
+      <p class="sk-d">I get my own data — pull it, clean it, model it, and build the dashboard that makes it usable by someone who isn't me. That last step is the one most analyses skip.</p>
+      <div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">Excel (Adv.)</span><span class="sk-tag">pandas/NumPy</span><span class="sk-tag">Dashboards</span></div>
     </div>
     <div class="sk-card" data-anim="up" data-delay="260">
-      <div class="sk-n">06</div><div class="sk-s">Cross-Functional</div>
-      <h3 class="sk-nm">Stakeholder &amp; Tools</h3>
-      <p class="sk-d">Fluent across functions — field engineers to management. Comfortable running the ticket queue and the status update in the same afternoon.</p>
-      <div class="sk-tags"><span class="sk-tag">Excel (Adv.)</span><span class="sk-tag">Jira</span><span class="sk-tag">Confluence</span><span class="sk-tag">Reporting</span></div>
+      <div class="sk-n">06</div><div class="sk-s">Delivery &amp; Risk</div>
+      <h3 class="sk-nm">Execution &amp; Stakeholders</h3>
+      <p class="sk-d">Fluent across functions — floor engineers to management. Comfortable running the incident queue and the status update in the same afternoon, and naming operational risk before it turns into a breach.</p>
+      <div class="sk-tags"><span class="sk-tag">Incident &amp; Escalation</span><span class="sk-tag">Vendor Coordination</span><span class="sk-tag">Enterprise Risk (ERM)</span><span class="sk-tag">Jira</span><span class="sk-tag">Confluence</span></div>
     </div>
   </div>
 </section>
@@ -1008,11 +1025,12 @@ footer{
     <div>
       <div class="sec-lbl" data-anim="left">/ About Me</div>
       <p class="about-bio" data-anim="left" data-delay="80">
-        An MBA who can <em>build</em> the analysis, not just present it.
+        An operations MBA who can <em>build</em> the analysis, not just present it.
       </p>
       <p class="about-body" data-anim="left" data-delay="160">
         MBA Candidate at PES University (Class of 2027) — <strong>majoring in Operations</strong> with a <strong>minor in Business Analytics</strong>. Coursework spans Production &amp; Operations Management, Business Analytics, Supply Chain, and Managerial Economics — and I'm most interested in the places where an operational decision has a number attached to it: staffing levels, service targets, inventory, capacity.<br><br>
-        Before the MBA I spent time in enterprise infrastructure support, where I learned the habit operations actually rewards — chasing the real cause rather than clearing the ticket. The engineering background isn't the headline; it's the reason I can source and model my own data instead of waiting for someone to hand me a spreadsheet. Targeting operations and analyst roles.
+        My focus is <strong>operations and supply chain</strong>: capacity and staffing, inventory and demand variability, process cost, and service-level design. The unifying question is the one I keep coming back to — <em>where does this system break, and what does the breakage cost?</em><br><br>
+        Before the MBA I spent time in enterprise infrastructure support, which taught me the habit operations actually rewards: chasing the real cause instead of clearing the ticket. The engineering background isn't the headline — it's the reason I can source and model my own data rather than wait for a spreadsheet. Targeting operations, supply chain, and analyst roles.
       </p>
       <div class="hero-btns" data-anim="left" data-delay="240">
         <a href="/assets/Koushik-C-Resume.pdf" target="_blank" rel="noopener" class="btn-p"><span>Résumé ↗</span></a>
@@ -1163,12 +1181,12 @@ footer{
 <!-- ══ MARQUEE BAND ══════════════════════════════ -->
 <div class="mq-band" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-item">Open to Operations &amp; Analyst Roles <span class="mq-dot"></span></span>
+    <span class="mq-item">Open to Operations &amp; Supply Chain Roles <span class="mq-dot"></span></span>
     <span class="mq-item">Product Management <span class="mq-dot"></span></span>
     <span class="mq-item">Technology Strategy <span class="mq-dot"></span></span>
     <span class="mq-item">Consulting <span class="mq-dot"></span></span>
     <span class="mq-item">Bengaluru, India <span class="mq-dot"></span></span>
-    <span class="mq-item">Open to Operations &amp; Analyst Roles <span class="mq-dot"></span></span>
+    <span class="mq-item">Open to Operations &amp; Supply Chain Roles <span class="mq-dot"></span></span>
     <span class="mq-item">Product Management <span class="mq-dot"></span></span>
     <span class="mq-item">Technology Strategy <span class="mq-dot"></span></span>
     <span class="mq-item">Consulting <span class="mq-dot"></span></span>
@@ -1182,7 +1200,7 @@ footer{
     <div>
       <div class="sec-lbl" data-anim="left">/ Contact Information</div>
       <h2 class="sec-h" data-anim="left">Let's<br>connect.</h2>
-      <p class="co-body" data-anim="left" data-delay="80">Open to operations and analyst roles — process improvement, business operations, supply chain, and analytics. If you're a recruiter or hiring manager, tell me what's broken and who owns it. I'll reply promptly.</p>
+      <p class="co-body" data-anim="left" data-delay="80">Open to <strong>operations, supply chain, and analyst roles</strong> — process improvement, capacity and inventory planning, business operations, and analytics. If you're a recruiter or hiring manager, tell me what's broken and who owns it. I'll reply promptly.</p>
       <div class="co-links" data-anim="left" data-delay="160">
         <a href="mailto:chunchukoushik232@gmail.com" class="co-link"><div class="co-ico">✉</div>chunchukoushik232@gmail.com</a>
         <a href="tel:+918277273661" class="co-link"><div class="co-ico">☎</div>+91 82772 73661</a>
@@ -1209,6 +1227,7 @@ footer{
           <select id="fr" name="reason" class="fsel" required>
             <option value="" disabled selected>Select…</option>
             <option>Operations Role</option>
+            <option>Supply Chain Role</option>
             <option>Analyst Role</option>
             <option>Internship Opportunity</option>
             <option>Collaboration / Project</option>
@@ -1238,8 +1257,8 @@ footer{
   </div>
   <div class="ft-scroll" aria-hidden="true">
     <div class="ft-si">
-      <span class="ft-s">Open to Operations &amp; Analyst Roles ✱ Process Improvement ✱ Supply Chain ✱ Business Analytics ✱&nbsp;</span>
-      <span class="ft-s">Open to Operations &amp; Analyst Roles ✱ Process Improvement ✱ Supply Chain ✱ Business Analytics ✱&nbsp;</span>
+      <span class="ft-s">Open to Operations ✱ Supply Chain ✱ Analyst Roles ✱ Process Improvement ✱ Capacity Planning ✱&nbsp;</span>
+      <span class="ft-s">Open to Operations ✱ Supply Chain ✱ Analyst Roles ✱ Process Improvement ✱ Capacity Planning ✱&nbsp;</span>
     </div>
   </div>
   <div class="ft-bot">
