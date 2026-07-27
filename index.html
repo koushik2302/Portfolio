@@ -1118,6 +1118,32 @@ footer{
       </div>
     </div>
 
+    <div class="proj-card" data-anim="up" data-delay="240">
+      <div class="proj-img">
+        <div class="proj-thumb"></div>
+        <span class="proj-badge">MBA Research · Full-Scale Data Pipeline</span>
+        <div class="thumb-wrap"><svg class="thumb-svg" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Safety-stock cost vs uniform policy: small scale +20.7%, full scale -1.14%">
+<text x="140" y="30" text-anchor="end" font-size="10" letter-spacing=".09em" fill="currentColor" fill-opacity=".55" font-family="ui-monospace,monospace">COST vs UNIFORM POLICY</text>
+<line x1="150" y1="44" x2="450" y2="44" stroke="currentColor" stroke-opacity=".12"/>
+<text x="140" y="77" text-anchor="end" font-size="11" fill="currentColor" fill-opacity=".5" font-family="ui-monospace,monospace">Small scale (575)</text><rect x="150" y="65" width="207" height="17" rx="2" fill="currentColor" fill-opacity=".28"/><text x="365" y="78" font-size="11" font-weight="500" fill="currentColor" fill-opacity=".55" font-family="ui-monospace,monospace">+20.7%</text>
+<text x="140" y="117" text-anchor="end" font-size="11" fill="var(--accent)" fill-opacity="1" font-family="ui-monospace,monospace">Full scale (166,720)</text><rect x="150" y="105" width="12" height="17" rx="2" fill="var(--accent)"/><text x="174" y="118" font-size="11" font-weight="700" fill="var(--accent)" font-family="ui-monospace,monospace">-1.14%</text>
+<text x="150" y="318" font-size="10" fill="currentColor" fill-opacity=".42" font-family="ui-monospace,monospace">n = 166,720 SKU-store combinations · 125.5M transaction rows</text>
+<text x="150" y="336" font-size="10.5" fill="var(--accent)" fill-opacity=".9" font-family="ui-monospace,monospace">The conclusion's direction flips once scale is real.</text>
+</svg></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-meta">Independent Research · 2026</div>
+        <h3 class="proj-title">Why Your ABC-XYZ Inventory Policy Might Be Backwards</h3>
+        <p class="proj-desc">ABC-XYZ inventory classification and safety-stock optimization built on the full Corporación Favorita retail dataset — <strong>125.5 million transaction rows</strong>, all 54 stores, the full 2013–2017 span, 166,720 product-store combinations classified end to end, not a sample. Includes an LLM-powered advisory agent (Qwen 3 8B via Ollama) for store-level inventory Q&amp;A, and a research paper draft targeting OPSEARCH / MDPI.</p>
+        <div class="proj-find"><b>The finding:</b> textbook wisdom says differentiated (ABC-XYZ) safety-stock policies cost <i>more</i> than a uniform policy — protecting best-sellers extra well is expensive. A small-scale test (575 SKU-store pairs, 1 city) confirms it: <b>+20.7%</b> more expensive. The same test at full scale (166,720 combos, all 54 stores) reverses it: the differentiated policy is <b>1.14% cheaper</b>. The long tail of low-value, erratic-demand items is where the savings live, and it's invisible at small sample sizes.</div>
+        <p class="proj-desc">Pipeline re-runs end to end (load → classify → safety stock → promotion/holiday analysis) against the full 125.5M-row dataset in under a minute, down from ~90 minutes pre-optimization, via indexing, early-exit guards, and DuckDB for the heaviest aggregations.</p>
+        <div class="proj-tech"><span class="tc">Python</span><span class="tc">SQLite</span><span class="tc">DuckDB</span><span class="tc">pandas</span><span class="tc">NumPy</span><span class="tc">Streamlit</span><span class="tc">Ollama</span></div>
+        <div class="proj-links">
+          <a class="proj-lnk" href="https://github.com/koushik2302/inventory-optimization" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
