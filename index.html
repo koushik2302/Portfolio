@@ -217,15 +217,16 @@ body{
   background:none;border:none;cursor:pointer;padding:10px;
   -webkit-tap-highlight-color:transparent;
 }
-.drawer-ham span{
-  display:block;width:20px;height:1.5px;background:var(--ink);border-radius:2px;
-  transition:transform .38s var(--spring),opacity .25s,background var(--dur);
+.drawer-ham-icon{position:relative;display:block;width:20px;height:20px}
+.drawer-ham-icon .bar{
+  position:absolute;top:50%;left:50%;width:20px;height:1.5px;background:var(--ink);border-radius:2px;
+  transition:transform .38s var(--spring),background var(--dur);
   transform-origin:center;
-  margin:4px auto;
 }
-.drawer-ham.x span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
-.drawer-ham.x span:nth-child(2){opacity:0;transform:scaleX(0)}
-.drawer-ham.x span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer-ham-icon .bar-h{transform:translate(-50%,-50%) rotate(0deg)}
+.drawer-ham-icon .bar-v{transform:translate(-50%,-50%) rotate(90deg)}
+.drawer-ham.x .bar-h{transform:translate(-50%,-50%) rotate(45deg)}
+.drawer-ham.x .bar-v{transform:translate(-50%,-50%) rotate(-45deg)}
 
 /* Drawer toggle in top-left of drawer */
 .drawer-top{
@@ -898,7 +899,7 @@ footer{
 
 <!-- ══ HAM BUTTON (z:400, always above drawer) ══ -->
 <button class="drawer-ham" id="hamFloat" type="button" aria-label="Toggle navigation">
-  <span></span><span></span><span></span>
+  <span class="drawer-ham-icon"><span class="bar bar-h"></span><span class="bar bar-v"></span></span>
 </button>
 
 <!-- ══ NAV (z:200) ══════════════════════════════ -->
