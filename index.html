@@ -77,18 +77,6 @@ body{
   min-height:100dvh;
 }
 
-/* ╔══════════════════════════════════════════════╗
-   ║  CUSTOM CURSOR (desktop only)                ║
-   ╚══════════════════════════════════════════════╝ */
-.cur-d,.cur-r{
-  position:fixed;top:0;left:0;pointer-events:none;
-  border-radius:50%;transform:translate(-50%,-50%);will-change:transform;
-}
-.cur-d{width:8px;height:8px;background:var(--ink);z-index:9999;transition:width .2s,height .2s,background .2s}
-.cur-r{width:36px;height:36px;border:1.5px solid var(--accent);z-index:9998;opacity:.55;transition:width .38s var(--spring),height .38s var(--spring),opacity .38s}
-.cur-d.hov{width:5px;height:5px;background:var(--accent)}
-.cur-r.hov{width:54px;height:54px;opacity:.25}
-@media(hover:none),(pointer:coarse){.cur-d,.cur-r{display:none}}
 
 /* ╔══════════════════════════════════════════════╗
    ║  THEME TOGGLE BUTTON                         ║
@@ -874,10 +862,6 @@ footer{
 </head>
 <body>
 
-<!-- Cursors -->
-<div class="cur-d" id="cDot"></div>
-<div class="cur-r" id="cRing"></div>
-
 <!-- ══ MOBILE DRAWER (z:300) ════════════════════ -->
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="drawer-top">
@@ -1393,30 +1377,6 @@ var nav = document.getElementById('nav');
 window.addEventListener('scroll',function(){
   nav.classList.toggle('stuck', window.scrollY > 30);
 },{ passive:true });
-
-/* ── CUSTOM CURSOR ─────────────────── */
-var cDot  = document.getElementById('cDot');
-var cRing = document.getElementById('cRing');
-var mx=0,my=0,rx=0,ry=0;
-
-if(cDot && cRing){
-  document.addEventListener('mousemove',function(e){
-    mx=e.clientX; my=e.clientY;
-    cDot.style.left=mx+'px'; cDot.style.top=my+'px';
-  },{passive:true});
-
-  (function raf(){
-    rx+=(mx-rx)*.11; ry+=(my-ry)*.11;
-    cRing.style.left=rx+'px'; cRing.style.top=ry+'px';
-    requestAnimationFrame(raf);
-  })();
-
-  var hovSel='a,button,.sk-card,.proj-card,.cert-card,.tog,.lng-pill';
-  document.querySelectorAll(hovSel).forEach(function(el){
-    el.addEventListener('mouseenter',function(){ cDot.classList.add('hov'); cRing.classList.add('hov'); });
-    el.addEventListener('mouseleave',function(){ cDot.classList.remove('hov'); cRing.classList.remove('hov'); });
-  });
-}
 
 /* ── SCROLL REVEAL ─────────────────── */
 var animEls = Array.from(document.querySelectorAll('[data-anim]'));
